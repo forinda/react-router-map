@@ -33,10 +33,24 @@ const routes: IRouteProps[] = [
     hasChildren: false,
   },
   {
-    pathName: 'Home',
-    urlPath: '/',
+    pathName: 'Admin',
+    urlPath: '/admin',
     Component: <Parent2 />,
-    hasChildren: false,
+    hasChildren: true,
+    nestedComponents: [
+      {
+        pathName: 'Dashboard',
+        urlPath: '/admin',
+        Component: <Child1 />,
+        hasChildren: false,
+      },
+      {
+        pathName: 'Users',
+        urlPath: '/admin/users',
+        Component: <Child2 />,
+        hasChildren: false,
+      },
+    ],
   },
 ]
 const Comp = () => (
@@ -45,15 +59,40 @@ const Comp = () => (
   </div>
 )
 ```
+
+```sh
+- Hompage # Hopepage render Parent 1
+- admin # The component wrapper where you pass your <Outlet/>
+  - Dashboard # Render dashboard
+  - Users # Render users
+  -
+```
+
+Sample Dashboard component
+
+```jsx
+const Admin = () => (
+  <div>
+    <div>
+      <h1>Dashboard</h1>
+    </div>
+    <div>
+      <Outlet />
+    </div>
+  </div>
+)
+```
+
 The code above implements `HashRouter` and `BrowserRouter` for you and you just need to install the package and `react-router-dom`
 Features
-- Optional topscroll on page navigation
-- Enable BrowserRouter or disable( Defaults to `HashRouter`) 
-- Nested layouts (You just have to to supply any level of nesting in your Application in the `nestedComponents` property)
-Upcoming features
- - Layout support
 
- In the mean time we can inject a wrapper in the route `Component` property
+- Optional topscroll on page navigation
+- Enable BrowserRouter or disable( Defaults to `HashRouter`)
+- Nested layouts (You just have to to supply any level of nesting in your Application in the `nestedComponents` property)
+  Upcoming features
+- Layout support
+
+In the mean time we can inject a wrapper in the route `Component` property
 
 Supports nested layouts
 ![Dashboard layout](./assets/nested.png)
