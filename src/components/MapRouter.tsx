@@ -4,21 +4,21 @@ import { IRouteProps, IRouterFunction, MapRouterProps } from 'src/types'
 import RouteFunction from './RouteFunction'
 import { TopScroll } from './TopScroll'
 
-export const MapRouter: IRouterFunction = (props: MapRouterProps) => {
-  const { routes, enableTopScroll, browserRouter } = props
-  
+export const MapRouter: IRouterFunction = function ({
+  routes, browserRouter = false, enableTopScroll = true,
+}: MapRouterProps): JSX.Element {
   return browserRouter ? (
     <BrowserRouter>
       {enableTopScroll && <TopScroll />}
       <Routes>
-        {routes.map((route: IRouteProps) => RouteFunction({ ...route }))}
+        {routes.map((route: IRouteProps) => RouteFunction(route))}
       </Routes>
     </BrowserRouter>
   ) : (
     <HashRouter>
       {enableTopScroll && <TopScroll />}
       <Routes>
-        {routes.map((route: IRouteProps) => RouteFunction({ ...route }))}
+        {routes.map((route: IRouteProps) => RouteFunction(route))}
       </Routes>
     </HashRouter>
   )
