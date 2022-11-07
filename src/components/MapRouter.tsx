@@ -10,7 +10,7 @@ type Props = {
   browserRouter: boolean
 }
 
-export function Router(props: Props): JSX.Element {
+export function MapRouter(props: Props): JSX.Element {
   const { routes, enableTopScroll, browserRouter } = props
   return browserRouter ? (
     <BrowserRouter>
@@ -29,5 +29,6 @@ export function Router(props: Props): JSX.Element {
   )
 }
 
-export type IRouterFunction = typeof Router
+export type IRouterFunction = typeof MapRouter
 export type IRouterReturn = ReturnType<IRouterFunction>
+export default MapRouter

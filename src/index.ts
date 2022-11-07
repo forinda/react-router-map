@@ -1,5 +1,5 @@
-import { Router } from './components/Router'
+import { MapRouter } from './components/MapRouter'
 import { TopScroll } from './components/TopScroll'
 
-export { Router, TopScroll }
-export default Object.freeze({ Router, TopScroll })
+export { MapRouter, TopScroll }
+export default Object.freeze({ MapRouter, TopScroll })
