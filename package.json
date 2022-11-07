@@ -1,0 +1,24 @@
+{
+  "name": "react-router-map",
+  "version": "0.0.1",
+  "description": "A declarative routing library that maps your routes and uses the react-router-dom library so that you focus on the logic rather than route configuration. It supports nested routing and react-router-dom v6+",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "react-router-dom",
+    "nested-routing",
+    "react-router-map",
+    "map-router",
+    "router-map"
+  ],
+  "author": "Felix Orinda",
+  "license": "ISC",
+  "devDependencies": {
+    "ngitignore": "^3.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
