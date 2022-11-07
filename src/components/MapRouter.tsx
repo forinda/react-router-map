@@ -10,8 +10,11 @@ type Props = {
   browserRouter?: boolean
 }
 
-export function MapRouter(props: Props): JSX.Element {
-  const { routes, enableTopScroll, browserRouter } = props
+export function MapRouter({
+  routes,
+  browserRouter = false,
+  enableTopScroll = true,
+}: Props): JSX.Element {
   return browserRouter ? (
     <BrowserRouter>
       {enableTopScroll && <TopScroll />}
