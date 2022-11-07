@@ -12,7 +12,7 @@ export type IRouteFunction = (props: IRouteProps) => JSX.Element
 
 export type IRouterFunction = (
   routes: IRouteProps[],
-  enableTopScroll?: boolean,
   browserRouter: boolean,
+  enableTopScroll?: boolean,
   layout?: React.ReactElement | React.FC | React.ComponentClass,
 ) => any

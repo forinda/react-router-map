@@ -7,7 +7,7 @@ import { TopScroll } from './TopScroll'
 type Props = {
   routes: IRouteProps[]
   enableTopScroll?: boolean
-  browserRouter: boolean
+  browserRouter?: boolean
 }
 
 export function MapRouter(props: Props): JSX.Element {

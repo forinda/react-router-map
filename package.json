@@ -4,7 +4,6 @@
   "description": "A declarative routing library that maps your routes and uses the react-router-dom library so that you focus on the logic rather than route configuration. It supports nested routing and react-router-dom v6+",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
-  "types": "./dist/lib/**/*.d.ts",
   "scripts": {
     "test": "jest --config jest.config.js",
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
@@ -14,7 +13,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run prettier && npm run lint",
     "build": "npm run build:clean && npm run build:esm && npm run build:cjs",
-    "build:esm": "tsc",
+    "build:esm": "tsc --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs"
   },
   "keywords": [

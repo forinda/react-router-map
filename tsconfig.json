@@ -25,7 +25,6 @@
     "resolveJsonModule": true,
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "./dist/lib",
     "emitDecoratorMetadata": true
   },
   "exclude": [
