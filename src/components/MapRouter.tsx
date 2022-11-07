@@ -1,20 +1,12 @@
 import React from 'react'
 import { HashRouter, BrowserRouter, Routes } from 'react-router-dom'
-import { IRouteProps } from '../types'
+import { IRouteProps, IRouterFunction, MapRouterProps } from 'src/types'
 import RouteFunction from './RouteFunction'
 import { TopScroll } from './TopScroll'
 
-type Props = {
-  routes: IRouteProps[]
-  enableTopScroll?: boolean
-  browserRouter?: boolean
-}
-
-export function MapRouter({
-  routes,
-  browserRouter = false,
-  enableTopScroll = true,
-}: Props): JSX.Element {
+export const MapRouter: IRouterFunction = (props: MapRouterProps) => {
+  const { routes, enableTopScroll, browserRouter } = props
+  
   return browserRouter ? (
     <BrowserRouter>
       {enableTopScroll && <TopScroll />}
@@ -31,7 +23,3 @@ export function MapRouter({
     </HashRouter>
   )
 }
-
-export type IRouterFunction = typeof MapRouter
-export type IRouterReturn = ReturnType<IRouterFunction>
-export default MapRouter

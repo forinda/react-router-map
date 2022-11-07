@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { render } from '@testing-library/react'
-import { MapRouter } from '../src'
+import { MapRouter } from '../src/index'
 import 'jest-canvas-mock'
 
 const Comp = () => <div>Test</div>
