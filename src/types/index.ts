@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 import React from 'react'
 
 declare module 'react-router-dom' {
@@ -34,3 +35,12 @@ export type MapRouterProps = {
   browserRouter?: boolean
 }
 export type IRouterFunction = (props: MapRouterProps) => JSX.Element
+
+// Create a namespace for the module
+declare global {
+  namespace MapRouter {
+    interface IntrinsicElements {
+      'react-router-map': any
+    }
+  }
+}

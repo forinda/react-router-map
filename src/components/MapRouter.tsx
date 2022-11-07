@@ -25,3 +25,5 @@ export const MapRouter: IRouterFunction = function ({
     </HashRouter>
   )
 }
+
+export default MapRouter

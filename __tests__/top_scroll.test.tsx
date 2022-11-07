@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { render } from '@testing-library/react'
-import { MapRouter } from '../src'
+import {MapRouter} from '../src'
 import 'jest-canvas-mock'
 
 const Comp = () => <div>Test</div>
@@ -11,6 +11,7 @@ describe('Common render', () => {
     render(<Comp />)
   })
 })
+
 
 describe('Render routes with top scroll', () => {
   it('renders without crashing', () => {

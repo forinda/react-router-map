@@ -1,8 +1,5 @@
-import { MapRouter as R } from './components/MapRouter'
-import { TopScroll as Ts } from './components/TopScroll'
+import MRouter from './components/MapRouter'
 
-const MapRouter = R
-const TopScroll = Ts
+export const MapRouter = MRouter
 
-export { MapRouter, TopScroll }
-export default Object.freeze({ MapRouter, TopScroll })
+export default MapRouter
