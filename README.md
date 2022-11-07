@@ -59,7 +59,7 @@ const Comp = () => (
   </div>
 )
 ```
-
+Sample layout structure
 ```sh
 - Hompage # Hopepage render Parent 1
 - admin # The component wrapper where you pass your <Outlet/>
