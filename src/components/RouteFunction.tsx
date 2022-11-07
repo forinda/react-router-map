@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { IRouteFunction, IRouteProps } from '../lib'
+import { IRouteFunction, IRouteProps } from '../types'
 
 export const RouteFunction: IRouteFunction = (props: IRouteProps) => {
   return props.hasChildren ? (

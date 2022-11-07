@@ -1,6 +1,6 @@
 import React from 'react'
 import { HashRouter, BrowserRouter, Routes } from 'react-router-dom'
-import { IRouteProps } from '../lib'
+import { IRouteProps } from '../types'
 import RouteFunction from './RouteFunction'
 import { TopScroll } from './TopScroll'
 
