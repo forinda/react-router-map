@@ -5,7 +5,9 @@ import RouteFunction from './RouteFunction'
 import { TopScroll } from './TopScroll'
 
 export const MapRouter: IRouterFunction = function ({
-  routes, browserRouter = false, enableTopScroll = true,
+  routes,
+  browserRouter = false,
+  enableTopScroll = true,
 }: MapRouterProps): JSX.Element {
   return browserRouter ? (
     <BrowserRouter>
