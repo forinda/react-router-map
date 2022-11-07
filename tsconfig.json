@@ -24,8 +24,9 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "declaration": true,
-    "declarationMap": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    // "declarationDir": "./dist",
+    // declaration output file
   },
   "exclude": [
     "node_modules",

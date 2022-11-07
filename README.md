@@ -15,9 +15,11 @@ yarn add react-router-map
 
 To load it in your component ensure `react-router-dom` is installed
 
+Supports both `esm` and `commonjs`
 ```jsx
 import { MapRouter } from 'react-router-map'
-import { IRouteProps } from 'react-router-map/dist/cjs/types' //Types of route
+import  {IRouteProps}  from 'react-router-map/dist/cjs/types'; //Types of route for commonjs
+import  {IRouteProps}  from 'react-router-map/dist/esm/types'; //Types of route for esm modules
 
 const Child1 = ()=> <div>Child 1</div>
 const Child2 = ()=> <div>Child 2</div>
@@ -43,3 +45,5 @@ const Comp = () => (
   </div>
 )
 ```
+Supports nested layouts
+![Dashboard layout](./assets/nested.png)
