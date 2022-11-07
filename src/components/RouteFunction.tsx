@@ -2,15 +2,18 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { IRouteFunction, IRouteProps } from '../lib'
 
-export const RouteFunction:IRouteFunction = (props: IRouteProps) => {
+export const RouteFunction: IRouteFunction = (props: IRouteProps) => {
   return props.hasChildren ? (
-    Array.isArray(props.nestedComponents) && props.nestedComponents.length > 0 ? (
+    Array.isArray(props.nestedComponents) &&
+    props.nestedComponents.length > 0 ? (
       <Route
         element={props.Component}
         path={props.urlPath}
         key={props.pathName}
       >
-        {props.nestedComponents!.map((child: IRouteProps) => RouteFunction(child))}
+        {props.nestedComponents!.map((child: IRouteProps) =>
+          RouteFunction(child),
+        )}
       </Route>
     ) : (
       <Route
@@ -19,9 +22,12 @@ export const RouteFunction:IRouteFunction = (props: IRouteProps) => {
         key={props.pathName}
       />
     )
-  ) : Array.isArray(props.nestedComponents) && props.nestedComponents.length > 0 ? (
+  ) : Array.isArray(props.nestedComponents) &&
+    props.nestedComponents.length > 0 ? (
     <Route element={props.Component} path={props.urlPath} key={props.pathName}>
-      {props.nestedComponents!.map((child: IRouteProps) => RouteFunction(child))}
+      {props.nestedComponents!.map((child: IRouteProps) =>
+        RouteFunction(child),
+      )}
     </Route>
   ) : (
     <Route
