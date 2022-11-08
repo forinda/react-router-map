@@ -1,10 +1,10 @@
 import React from 'react'
 import { HashRouter, BrowserRouter, Routes } from 'react-router-dom'
-import { IRouteProps, IRouterFunction, MapRouterProps } from 'src/types'
+import { IRouteProps, MapRouterFunction, MapRouterProps } from 'src/types'
 import RouteFunction from './RouteFunction'
 import { TopScroll } from './TopScroll'
 
-export const MapRouter: IRouterFunction = function ({
+export const MapRouter: MapRouterFunction = function ({
   routes,
   browserRouter = false,
   enableTopScroll = true,
