@@ -1,6 +1,6 @@
 {
   "name": "react-router-map",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A declarative routing library that maps your routes and uses the react-router-dom library so that you focus on the logic rather than route configuration. It supports nested routing and react-router-dom v6+",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
