@@ -19,7 +19,7 @@ Supports both `esm` and `commonjs`
 
 ```jsx
 import { MapRouter } from 'react-router-map'
-import { IRouteProps } from 'react-router-map' //Types of route for esm modules
+import {IRouteProps} from 'react-router-map/dist/types' //Types of route for esm modules
 
 const Child1 = () => <div>Child 1</div>
 const Child2 = () => <div>Child 2</div>
