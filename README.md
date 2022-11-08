@@ -92,9 +92,8 @@ Features
   Upcoming features
 - Layout support
 
-# Try it out
-
-<iframe src="https://stackblitz.com/edit/react-ts-nriwyu?ctl=1&devToolsHeight=33&embed=1&file=pages/Homepage.tsx&theme=dark"></iframe>
+# Try it out on Stackblitz
+[Stackblitz](https://stackblitz.com/edit/react-ts-nriwyu?ctl=1&devToolsHeight=33&embed=1&file=pages/Homepage.tsx&theme=dark)
 
 In the mean time we can inject a wrapper in the route `Component` property
 
