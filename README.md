@@ -65,11 +65,11 @@ type LayoutProps={
 }
 const LayoutComponent=(props:LayoutProps)=>(
   <div>
-  <div>
-  Header section
-  </div>
-  <div>{props.children}</div>
-  <div>Footer section</div>
+    <div>
+    Header section
+    </div>
+      <div>{props.children}</div>
+    <div>Footer section</div>
   </div>
 )
 const ComponentPage = () => (
