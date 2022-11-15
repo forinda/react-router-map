@@ -13,12 +13,7 @@ export const MapRouter: MapRouterFunction = function ({
   return Layout ? (
     browserRouter ? (
       <BrowserRouter>
-      {
-        topScroll ? (
-          <TopScroll/>
-            
-        ) : <></>
-      }
+        {topScroll ? <TopScroll /> : <></>}
         <Layout>
           <Routes>
             {routes.map((route: IRouteProps) => (
@@ -38,14 +33,15 @@ export const MapRouter: MapRouterFunction = function ({
           </Routes>
         </Layout>
       </HashRouter>
-    )) : browserRouter ? (
-      <BrowserRouter>
-        {topScroll && <TopScroll />}
-        <Routes>
-          {routes.map((route: IRouteProps) => RouteFunction(route))}
-        </Routes>
-      </BrowserRouter>
-    ) : (
+    )
+  ) : browserRouter ? (
+    <BrowserRouter>
+      {topScroll && <TopScroll />}
+      <Routes>
+        {routes.map((route: IRouteProps) => RouteFunction(route))}
+      </Routes>
+    </BrowserRouter>
+  ) : (
     <HashRouter>
       {topScroll && <TopScroll />}
       <Routes>
