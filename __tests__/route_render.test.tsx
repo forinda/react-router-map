@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { render } from '@testing-library/react'
-import { MapRouter } from '../src/index'
+import  MapRouter  from '../src/index'
 import 'jest-canvas-mock'
 
 const Comp = () => <div>Test</div>
@@ -25,8 +25,8 @@ describe('Render routes', () => {
             urlPath: '/test',
           },
         ]}
-        enableTopScroll={false}
-        browserRouter={false}
+        topScroll
+      Layout={Comp}
       />,
     )
   })
@@ -54,8 +54,7 @@ describe('Render routes with nesting', () => {
             urlPath: '/',
           },
         ]}
-        enableTopScroll={false}
-        browserRouter={false}
+        topScroll
       />,
     )
   })
