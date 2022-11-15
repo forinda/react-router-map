@@ -1,5 +1,5 @@
-`react-router-map`
---
+## `react-router-map`
+
 ## How to use
 
 Installation
@@ -17,12 +17,14 @@ To load it in your component ensure `react-router-dom` is installed
 
 Supports both `esm` and `commonjs`
 
-For versions `>1.0.0` 
+For versions `>1.0.0`
+
 - Removal of `hasChildren` prop and check for the children directly without the `boolean` field
 - Addition of `Layout` prop and `extensible` layout structure in the routes level for more complex routing layout wrappers
+
 ```jsx
-import MapRouter  from 'react-router-map'
-import {IRouteProps} from 'react-router-map/dist/types' //Types of route for esm modules
+import MapRouter from 'react-router-map'
+import { IRouteProps } from 'react-router-map/dist/types' //Types of route for esm modules
 
 const Child1 = () => <div>Child 1</div>
 const Child2 = () => <div>Child 2</div>
@@ -58,76 +60,76 @@ const Comp = () => (
   </div>
 )
 ```
+
 If you are using a layout component for your app that runs acrosss all components then you can just plug it in
+
 ```jsx
-type LayoutProps={
-  children:JSX.Element
+type LayoutProps = {
+  children: JSX.Element,
 }
-const LayoutComponent=(props:LayoutProps)=>(
+const LayoutComponent = (props: LayoutProps) => (
   <div>
-    <div>
-    Header section
-    </div>
-      <div>{props.children}</div>
+    <div>Header section</div>
+    <div>{props.children}</div>
     <div>Footer section</div>
   </div>
 )
 const ComponentPage = () => (
-    <MapRouter routes={[]} topScroll browserRouter Layout={LayoutComponent} />
+  <MapRouter routes={[]} topScroll browserRouter Layout={LayoutComponent} />
 )
 ```
+
 > Another way of using the Layout is component level layout for each route i.e
+
 ```jsx
 type Lmap = (
-	LayoutContainer: React.FC<{
-		children: JSX.Element;
-	}>,
-	Component: React.FC | React.ElementType,
-	isProtected?: boolean
-) => JSX.Element;
+  LayoutContainer: React.FC<{
+    children: JSX.Element,
+  }>,
+  Component: React.FC | React.ElementType,
+  isProtected?: boolean,
+) => JSX.Element
 
 const layoutWrap: Lmap = (
-	LayoutContainer: React.FC<{ children: JSX.Element }>,
-	Component: React.FC | React.ElementType,
+  LayoutContainer: React.FC<{ children: JSX.Element }>,
+  Component: React.FC | React.ElementType,
 ) => {
-	return (
-		<LayoutContainer>
-					<Component />
-		</LayoutContainer>
-	);
-};
+  return (
+    <LayoutContainer>
+      <Component />
+    </LayoutContainer>
+  )
+}
 const routes: IRouteProps[] = [
-	{
-		Component: layoutWrap(BaseLayout, Homepage),
-		pathName: 'Home',
-		urlPath: '/'
-	},
-	{
-		Component: layoutWrap(BaseLayout, AboutPage),
-		pathName: 'About',
-		urlPath: '/about'
-	},
-	{
-		Component: layoutWrap(BaseLayout, ContactPage),
-		pathName: 'Contact',
-		urlPath: '/contact'
-	},
-	{
-		Component: layoutWrap(BaseLayout, NotFound),
-		pathName: 'NotFound',
-		urlPath: '*'
-	}
-];
-const ComponentPage = () => (
-    <MapRouter routes={routes} topScroll  />
-)
+  {
+    Component: layoutWrap(BaseLayout, Homepage),
+    pathName: 'Home',
+    urlPath: '/',
+  },
+  {
+    Component: layoutWrap(BaseLayout, AboutPage),
+    pathName: 'About',
+    urlPath: '/about',
+  },
+  {
+    Component: layoutWrap(BaseLayout, ContactPage),
+    pathName: 'Contact',
+    urlPath: '/contact',
+  },
+  {
+    Component: layoutWrap(BaseLayout, NotFound),
+    pathName: 'NotFound',
+    urlPath: '*',
+  },
+]
+const ComponentPage = () => <MapRouter routes={routes} topScroll />
 ```
 
-For versions `<=1.0.0`
---
+## For versions `<=1.0.0`
+
 ```jsx
 import { MapRouter } from 'react-router-map'
-import {IRouteProps} from 'react-router-map/dist/types' //Types of route for esm modules
+import { IRouteProps } from 'react-router-map/dist/types' //Types of route for esm modules
 
 const Child1 = () => <div>Child 1</div>
 const Child2 = () => <div>Child 2</div>
@@ -167,7 +169,9 @@ const Comp = () => (
   </div>
 )
 ```
+
 Sample layout structure
+
 ```sh
 - Hompage # Hopepage render Parent 1
 - admin # The component wrapper where you pass your <Outlet/>
@@ -191,7 +195,6 @@ const Admin = () => (
 )
 ```
 
-
 The code above implements `HashRouter` and `BrowserRouter` for you and you just need to install the package and `react-router-dom`
 Features
 
@@ -202,10 +205,10 @@ Features
 - Layout support
 
 # Try it out on Stackblitz
-<a href="https://stackblitz.com/edit/react-ts-nriwyu?ctl=1&devToolsHeight=33&embed=1&file=pages/Homepage.tsx&theme=dark" target="_black">Stackblitz live</a>
---
+
+## <a href="https://stackblitz.com/edit/react-ts-nriwyu?ctl=1&devToolsHeight=33&embed=1&file=pages/Homepage.tsx&theme=dark" target="_black">Stackblitz live</a>
+
 In the mean time we can inject a wrapper in the route `Component` property
 
 Supports nested layouts
 ![Dashboard layout](./assets/nested.png)
-
