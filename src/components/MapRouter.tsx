@@ -8,33 +8,8 @@ export const MapRouter: MapRouterFunction = function ({
   routes,
   browserRouter = false,
   topScroll = true,
-  Layout,
 }: MapRouterProps): JSX.Element {
-  return Layout !==undefined? (
-    browserRouter ? (
-      <BrowserRouter>
-        {topScroll ? <TopScroll /> : <></>}
-        <Layout>
-          <Routes>
-            {routes.map((route: IRouteProps) => (
-              <RouteFunction key={route.path} {...route} />
-            ))}
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    ) : (
-      <HashRouter>
-        {topScroll && <TopScroll />}
-        <Layout>
-          <Routes>
-            {routes.map((route: IRouteProps) => (
-              <RouteFunction key={route.path} {...route} />
-            ))}
-          </Routes>
-        </Layout>
-      </HashRouter>
-    )
-  ) : browserRouter ? (
+  return browserRouter ? (
     <BrowserRouter>
       {topScroll && <TopScroll />}
       <Routes>

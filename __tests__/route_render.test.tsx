@@ -26,7 +26,6 @@ describe('Render routes', () => {
           },
         ]}
         topScroll
-      Layout={Comp}
       />,
     )
   })

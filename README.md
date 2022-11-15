@@ -64,24 +64,6 @@ const Comp = () => (
 If you are using a layout component for your app that runs acrosss all components then you can just plug it in
 
 ```jsx
-type LayoutProps = {
-  children: JSX.Element,
-}
-const LayoutComponent = (props: LayoutProps) => (
-  <div>
-    <div>Header section</div>
-    <div>{props.children}</div>
-    <div>Footer section</div>
-  </div>
-)
-const ComponentPage = () => (
-  <MapRouter routes={[]} topScroll browserRouter Layout={LayoutComponent} />
-)
-```
-
-> Another way of using the Layout is component level layout for each route i.e
-
-```jsx
 type Lmap = (
   LayoutContainer: React.FC<{
     children: JSX.Element,
@@ -124,7 +106,7 @@ const routes: IRouteProps[] = [
 const ComponentPage = () => <MapRouter routes={routes} topScroll />
 ```
 
-## For versions `<=1.0.0`
+For versions `<=1.0.0`
 
 ```jsx
 import { MapRouter } from 'react-router-map'
