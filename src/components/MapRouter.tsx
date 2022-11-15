@@ -8,9 +8,9 @@ export const MapRouter: MapRouterFunction = function ({
   routes,
   browserRouter = false,
   topScroll = true,
-  Layout = null,
+  Layout,
 }: MapRouterProps): JSX.Element {
-  return Layout ? (
+  return Layout !==undefined? (
     browserRouter ? (
       <BrowserRouter>
         {topScroll ? <TopScroll /> : <></>}
