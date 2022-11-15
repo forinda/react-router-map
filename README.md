@@ -87,7 +87,6 @@ type Lmap = (
     children: JSX.Element,
   }>,
   Component: React.FC | React.ElementType,
-  isProtected?: boolean,
 ) => JSX.Element
 
 const layoutWrap: Lmap = (
