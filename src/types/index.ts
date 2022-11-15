@@ -2,7 +2,7 @@
 import React from 'react'
 
 type LayoutType = (props: {
-  children: React.ReactNode | React.ReactElement
+  children: React.ReactNode | React.ReactElement|JSX.Element
 }) => JSX.Element
 export interface IRouteProps {
   [key: string]: any
